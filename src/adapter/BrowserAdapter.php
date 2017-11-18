@@ -8,21 +8,21 @@ use Facebook\WebDriver\Remote\DriverCommand;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
 use Facebook\WebDriver\Remote\RemoteWebElement;
 use Facebook\WebDriver\WebDriverBy;
-use interfaces\ProxyInterface;
+use interfaces\ProxyDataInterface;
 use ZipArchive;
 
 class BrowserAdapter
 {
     /** @var RemoteWebDriver */
     private $driver;
-    /** @var ProxyInterface */
+    /** @var ProxyDataInterface */
     private $proxy;
     /** @var string */
     private $host;
     /** @var bool */
     private $isInit = false;
 
-    public function __construct(ProxyInterface $proxy = null, $host = 'http://s_selenium:4444/wd/hub')
+    public function __construct(ProxyDataInterface $proxy = null, $host = 'http://s_selenium:4444/wd/hub')
     {
         $this->proxy = $proxy;
         $this->host = $host;
@@ -37,7 +37,7 @@ class BrowserAdapter
         $options = new ChromeOptions();
         $options->addArguments(['--user-agent=Mozilla/5.0 (iPad; CPU OS 9_0 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/9.0 Mobile/13A340 Safari/600.1.4']);
         $caps->setCapability(ChromeOptions::CAPABILITY, $options);
-        if ($this->proxy instanceof ProxyInterface && $this->proxy->getIp()) {
+        if ($this->proxy instanceof ProxyDataInterface && $this->proxy->getIp()) {
             $pluginForProxyLogin = '/tmp/a' . uniqid() . '.zip';
             $zip = new ZipArchive();
             $zip->open($pluginForProxyLogin, ZipArchive::CREATE | ZipArchive::OVERWRITE);

@@ -12,7 +12,8 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=7.0",
-    "facebook/webdriver": "1.4.*"
+    "facebook/webdriver": "1.4.*",
+    "bongrun/api-proxy6": "*"
   },
   "config": {
     "process-timeout": 1800
