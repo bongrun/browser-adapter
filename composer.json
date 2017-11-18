@@ -1,0 +1,23 @@
+{
+  "name": "bongrun/browser-adapter",
+  "description": "Виртуальный браузер",
+  "keywords": ["bongrun", "browser" ],
+  "homepage": "https://github.com/bongrun/browser-adapter",
+  "type": "project",
+  "license": "Apache License 2.0",
+  "support": {
+    "issues": "https://github.com/bongrun/browser-adapter/issues?state=open",
+    "source": "https://github.com/bongrun/browser-adapter"
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.0",
+    "facebook/webdriver": "1.4.*"
+  },
+  "config": {
+    "process-timeout": 1800
+  },
+  "autoload": {
+    "psr-4": {"bongrun\\": "src/"}
+  }
+}
