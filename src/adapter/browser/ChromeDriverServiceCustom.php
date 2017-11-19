@@ -1,6 +1,6 @@
 <?php
 
-namespace adapter\browser;
+namespace bongrun\adapter\browser;
 
 use Facebook\WebDriver\Chrome\ChromeDriverService;
 use Exception;

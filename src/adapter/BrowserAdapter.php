@@ -1,6 +1,6 @@
 <?php
 
-namespace adapter;
+namespace bongrun\adapter;
 
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
